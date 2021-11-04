@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -76,7 +75,7 @@ public class Ticket {
 
 	@Override
 	public String toString() {
-		return "Ticket [ticketId=" + ticketId + "]";
+		return "Ticket [ticketId=" + ticketId + ", user=" + user.getUserId() + ", seat=" + seat.getId() + ", flight=" + flight.getId() + "]";
 	}
 	
 }
