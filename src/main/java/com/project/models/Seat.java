@@ -8,11 +8,14 @@ import java.sql.SQLException;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.Session;
@@ -31,7 +34,7 @@ public class Seat {
 	
 	
 	//Many seats belong to many flight id's
-		@ManyToMany(cascade = CascadeType.ALL)
+		@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 		@JoinColumn(name="flight_id", nullable=true)
 		private int flight_id;
 		
